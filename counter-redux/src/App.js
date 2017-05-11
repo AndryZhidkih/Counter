@@ -4,16 +4,16 @@ import style from "./count.css"
 
 class App extends Component {
   addOne(){
-    this.props.onAddOne(this.props.counterStore)
+    this.props.onAddOne(this.props.count)
   }
   addFive(){
-    this.props.onAddFive(this.props.counterStore)
+    this.props.onAddFive(this.props.count)
   }
   addTen(){
-      this.props.onAddTen(this.props.counterStore)
+      this.props.onAddTen(this.props.count)
   }
   render(){
-    var count=this.props.counterStore
+    let count=this.props.counterStore
     return (
       <div>
         <button onClick={this.addOne.bind(this)}>+1</button>
