@@ -1,27 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import {Provider} from "react-redux"
+import {createStore} from "redux";
+import CounterReducer from "./reducers/count-reducer"
 import App from './App';
 import './index.css';
 
-function counters(state=0, action) {
-  if (action.type === 'ADD_ONE') {
-    return state +1 
-  }
-  else if(action.type==="ADD_FIVE"){
-  	return state +5
-  }
-  else if(action.type==="ADD_TEN"){
-  	return state +10
-  }
-  return state;
-}
+const store=createStore(CounterReducer)
 
-const store = createStore(counters);
 ReactDOM.render(
-  <Provider store={store}>
+	<Provider store={store}>
     <App />
-  </Provider>,
+   </Provider>,
   document.getElementById('root')
 );
